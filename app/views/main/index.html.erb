@@ -1,0 +1,116 @@
+ <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          
+            <!-- The drop down menu -->
+            <ul class="nav pull-right">
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              
+                  <!-- Login form here -->
+                  <form action="index" method="post" accept-charset="UTF-8">
+                    <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" placeholder="usuario del empleado"/>
+                    <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" placeholder="contraseña"/>
+                    <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+                    <label class="string optional" for="user_remember_me" style="color: black">Recordame</label>
+                    <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <script>
+              $(function() {
+                // Setup drop down menu
+                $('.dropdown-toggle').dropdown();
+                
+                // Fix input element click problem
+                $('.dropdown input, .dropdown label').click(function(e) {
+                  e.stopPropagation();
+                });
+              });
+            </script>
+            
+            <a class="brand" href="#">Transporte Discovery</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="applicaction" data-toggle="tab">Inicio</a></li>
+                <li><a href="horarios">Horarios</a></li>   
+                <li class="dropdown">                 
+                <li><a href="recibo">E-Ticket!</a></li>
+                 <li><a href="javascript:void(0)" onclick="saludo()">Contacto</a></li>  
+              </ul>
+              
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+          
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+ <div class="container">
+   
+    <div id="myCarousel" class="carousel slide"> 
+      <!-- Carousel items -->  
+      <div class="carousel-inner">
+        <div class="active item"><%= image_tag "sliders1.jpeg"%></div>
+        <div class="item"><%= image_tag "02-6.JPG"%></div>
+        <div class="item"><%= image_tag "02-8.jpeg"%></div>
+        <div class="item"><%= image_tag "02-10.JPG"%></div> 
+        <div class="item"><%= image_tag "sliders3.jpg"%></div>
+         <div class="item"><%= image_tag "03-1.JPG"%></div>
+         <div class="item"><%= image_tag "03-4.JPG"%></div>
+        <div class="item"><%= image_tag "sliders2.jpg"%></div>
+        <div class="item"><%= image_tag "04-2.JPG"%></div>
+        <div class="item"><%= image_tag "04-13.JPG"%></div>
+        <div class="item"><%= image_tag "sliders4.jpg"%></div>
+        <div class="item"><%= image_tag "05-8.jpg"%></div>
+        <div class="item"><%= image_tag "05-14.jpg"%></div>  
+      </div>  
+      <!-- Carousel nav -->  
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div> 
+ 
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <h2>Quienes Somos</h2>
+          <p>Es un agrado para nosotros presentarnos como una empresa dinámica y emprendedora donde la experiencia garantiza la calidad de nuestros servicios teniendo como finalidad coordinar sus actividades turísticas y de negocios.
+          En el país de una manera confiable y eficaz.Transporte Discovery cuenta con un centro de operaciones en la ciudad de Tegucigalpa, Honduras  y alianzas estratégicas con empresas afines en los destinos de nuestro país.</p>         
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <h2>NUESTRA VISION</h2>
+          <p>Posicionarnos como lideres en el rubro turístico de nuestro país y tener la confianza de nuestros clientes al saber que Cuentan con una empresa que les brinda la mejor opción para el desarrollo de sus viajes y servicios.</p>       
+        </div><!-- /.span4 -->
+        <div class="span4">         
+          <h2>NUESTRA  MISION</h2>
+          <p>La satisfacción y seguridad de ser, sus asesores y amigos al saber que orientamos nuestros servicios, estrategias y operaciones en actividades dirigidas a ofrecer experiencias con alto valor agregado.</p>         
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+   </div>
+   
+   <p> <%= @user %> </p>
+   <p> <%= @empleado %> </p>
+   
+   <hr class="featurette-divider"> 
+    <footer>
+        <p> Copyright &copy; Transporte Discovery Todos los derechos reservados. Atención al cliente:  gabriel_23hgap@unite.edu </p>
+    </footer>
+    
