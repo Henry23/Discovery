@@ -8,6 +8,7 @@ gem 'jquery-datatables-rails'
 gem "paperclip"
 gem 'gmaps4rails'
 gem 'google-webfonts'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'

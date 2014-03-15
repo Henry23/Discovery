@@ -34,65 +34,25 @@
         
         <div class="span4">  
           <br>
-                <p>Horarios de Tegucigalpa a Juticalpa</p>
+                <h1>Datos de los Horarios</h1>
+          <br>
           <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
             <tr>
               <th>Origen</th>
               <th>Destino</th>
               <th>Horarios</th>
               <th>Descripcion</th>
+            </tr>          
+            <% @camino.each do |u| %>
+              <tr> 
+                <td><%= Terminal.find_by_id(u.terminal_id_origen).nombre %> </td>
+                <td><%= Terminal.find_by_id(u.terminal_id_destino).nombre %> </td>
+                <td>sale <%= u.hora_salida.strftime("%H:%M") %>
+                lle. <%= u.hora_llegada.strftime("%H:%M") %></td>
+                <td>Bus: duración: <%= u.hora_salida - u.hora_salida %>) </td>
             </tr>
-            <tr>
-              <td>Tegucigalpa</td>
-              <td>Juticalpa</td>
-              <td>sale.06:15
-                   lle.09:15</td>
-               <td>Bus: duración: 3:30h</td>
-            </tr>
-            <tr>
-              <td>Tegucigalpa</td>
-              <td>Juticalpa</td>
-              <td>sale. 06:45
-                lle. 10:15</td>
-              <td>Bus: duración: 3:30h, continúa a Catacamas</td>
-            </tr>
-             <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 07:45
-                lle. 11:15</td>
-            </tr>
-            <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 08:30
-                lle. 11:30</td>
-            </tr>
-             <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 08:45
-                lle. 12:15</td>
-            </tr>
-             <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 09:15
-                lle. 12:30</td>
-            </tr>
-               <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 09:45
-                lle. 13:15</td>
-            </tr>
-              <tr>
-               <td>Tegucigalpa</td>
-               <td>Juticalpa</td>
-                <td>sale. 10:15
-                lle. 13:30</td>
-            </tr>
-    </table>                  
+            <% end %>                    
+          </table>                  
        </div><!-- /.span4 --> 
       </div><!-- /.row -->
    </div>

@@ -1,12 +1,13 @@
 Discovery::Application.routes.draw do
+  
+  devise_for :empleados
   resources :paquete
   resources :horarios
   resources :recibo
-  resources :signin
+  resources :login
   
 
-  post 'index', to: 'main'
-  get 'signin/index'
+  get 'login/index'
   get 'main/index'
   get 'horarios/index'
   get 'paquete/index'

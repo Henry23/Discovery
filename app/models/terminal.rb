@@ -1,4 +1,4 @@
 class Terminal < ActiveRecord::Base
    has_many :empleados
-   has_many :rutas
+   has_many :caminos
 end
