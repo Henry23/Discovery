@@ -1,0 +1,172 @@
+<body>
+
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Transporte Discovery</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="/" >Inicio</a></li>
+                <li><a href="horarios">Horarios</a></li>
+                <li><a href="recibo">E-Ticket!</a></li>
+                 <li><a href="javascript:void(0)" onclick="saludo()">Contacto</a></li>  
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+  
+    <div class="container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4"> 
+          
+          </div><!-- /.span4 --> 
+         <div class="span4">  
+          <br>
+           <h2>Agregar Empleado</h2>
+          <br>
+           <form accept-charset="UTF-8" action="/empleados" class="new_empleado" id="new_empleado" method="post">
+             <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="dMljQ1xwxviZciNWTNzkzf2lvHHiAsqClQOTu19qdic=" /></div>
+             <div><label for="empleado_email">Email</label>
+               <input autofocus="autofocus" id="empleado_email" name="empleado[email]" type="email" value="" /></div>
+             <div><label for="empleado_password">Password</label>
+               <input id="empleado_password" name="empleado[password]" type="password" /></div>
+             <div><label for="empleado_password_confirmation">Password confirmation</label>
+               <input id="empleado_password_confirmation" name="empleado[password_confirmation]" type="password" /></div>
+             <div><label for="empleado_primer_nombre">Primer Nombre</label>
+               <input autofocus="autofocus" id="empleado_primer_nombre" name="empleado[primer_nombre]" type="text" value="" /></div>
+             <div><label for="empleado_segundo_nombre">Segundo Nombre</label>
+               <input autofocus="autofocus" id="empleado_segundo_nombre" name="empleado[segundo_nombre]" type="text" value="" /></div>
+             <div><label for="empleado_primer_apellido">Primer Apellido</label>
+               <input autofocus="autofocus" id="empleado_primer_apellido" name="empleado[primer_apellido]" type="text" value="" /></div>
+             <div><label for="empleado_segundo_apellido">Segundo Apellido</label>
+               <input autofocus="autofocus" id="empleado_segundo_apellido" name="empleado[segundo_apellido]" type="text" value="" /></div>
+                <div><label for="empleado_fecha_nacimiento1">Fecha de Nacimiento</label></div>
+              <select name="empleado[fecha_nacimiento]" id="empleado_fecha_nacimiento1" style="width:110px;">
+                          <option value="1">Enero</option>
+		                      <option value="2">Febrero</option>
+	                       	<option value="3">Marzo</option>
+		                      <option value="4">Abril</option>
+		                      <option value="5">Mayo</option>
+		                      <option value="6">Junio</option>
+		                      <option value="7">Julio</option>
+		                      <option value="8">Agosto</option>
+		                      <option value="9">Septiembre</option>
+		                      <option value="10">Octubre</option>
+		                      <option value="11">Noviembre</option>
+		                      <option value="12">Diciembre</option>
+                        </select>
+                        <select name="empleado[fecha_nacimiento]" id="empleado_fecha_nacimiento2", style="width:50px;">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                      		<option value="6">6</option>
+		                      <option value="7">7</option>
+	                      	<option value="8">8</option>
+		                      <option value="9">9</option>
+	                      	<option value="10">10</option>
+	                       	<option value="11">11</option>
+	                      	<option value="12">12</option>
+		                      <option value="13">13</option>
+	                      	<option value="14">14</option>
+	                      	<option value="15">15</option>
+	                       	<option value="16">16</option>
+		                      <option value="17">17</option>
+		                      <option value="18">18</option>
+	                      	<option value="19">19</option>
+	                      	<option value="20">20</option>
+	                      	<option value="21">21</option>
+	                      	<option value="22">22</option>
+	                      	<option value="23">23</option>
+                      		<option value="24">24</option>
+		                      <option value="25">25</option>
+		                      <option value="26">26</option>
+                          <option value="27">27</option>
+		                      <option value="28">28</option>
+		                      <option value="29">29</option>
+                          <option value="30">30</option>
+	                      	<option value="31">31</option>
+                        </select>                
+                        <input name="empleado[fecha_nacimiento]" type="text" id="empleado_fecha_nacimiento3" style="width:50px;"  placeholder="Año" />
+             <div><label for="empleado_fecha_fecha_inicio">Fecha de Inicio</label></div>
+              <select name="empleado[fecha_inicio]" id="empleado_fecha_inicio1" style="width:110px;">
+                          <option value="1">Enero</option>
+		                      <option value="2">Febrero</option>
+	                       	<option value="3">Marzo</option>
+		                      <option value="4">Abril</option>
+		                      <option value="5">Mayo</option>
+		                      <option value="6">Junio</option>
+		                      <option value="7">Julio</option>
+		                      <option value="8">Agosto</option>
+		                      <option value="9">Septiembre</option>
+		                      <option value="10">Octubre</option>
+		                      <option value="11">Noviembre</option>
+		                      <option value="12">Diciembre</option>
+                        </select>
+                        <select name="empleado[fecha_inicio]" id="empleado_fecha_inicio2", style="width:50px;">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                      		<option value="6">6</option>
+		                      <option value="7">7</option>
+	                      	<option value="8">8</option>
+		                      <option value="9">9</option>
+	                      	<option value="10">10</option>
+	                       	<option value="11">11</option>
+	                      	<option value="12">12</option>
+		                      <option value="13">13</option>
+	                      	<option value="14">14</option>
+	                      	<option value="15">15</option>
+	                       	<option value="16">16</option>
+		                      <option value="17">17</option>
+		                      <option value="18">18</option>
+	                      	<option value="19">19</option>
+	                      	<option value="20">20</option>
+	                      	<option value="21">21</option>
+	                      	<option value="22">22</option>
+	                      	<option value="23">23</option>
+                      		<option value="24">24</option>
+		                      <option value="25">25</option>
+		                      <option value="26">26</option>
+                          <option value="27">27</option>
+		                      <option value="28">28</option>
+		                      <option value="29">29</option>
+                          <option value="30">30</option>
+	                      	<option value="31">31</option>
+                        </select>                
+                        <input name="empleado[fecha_inicio]" type="text" id="empleado_fecha_inicio3" style="width:50px;"  placeholder="Año" />
+                      
+                      
+             
+             <!-- 
+      
+   
+      t.string :sexo, null: true, limit: 2
+      t.string :direccion, limit: 60, null: true
+      t.string :profesion, limit: 30, null: true
+      t.string :telefono, limit: 20, null: true
+      t.string :nacionalidad, limit: 30, null: true
+      t.boolean :administrador, null:true -->
+             <div><input name="commit" type="submit" value="Sign up" /></div>
+           </form>
+           <a href="/empleados/sign_in">Sign in</a><br />           
+        </div><!-- /.span4 -->          
+      </div><!-- /.row -->
+  </div>
+</body>

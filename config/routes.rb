@@ -4,7 +4,7 @@ Discovery::Application.routes.draw do
   resources :paquete
   resources :horarios
   resources :recibo
-  resources :login
+  resources :addempleados
   
 
   get 'login/index'
@@ -12,6 +12,7 @@ Discovery::Application.routes.draw do
   get 'horarios/index'
   get 'paquete/index'
   get 'recibo/index'
+  get 'addempleados/index'
   root 'main#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
