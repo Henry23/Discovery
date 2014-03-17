@@ -71,7 +71,96 @@
           <br>
            <h2>Agregar Empleado</h2>
           <br>
-        
+            <%= form_for @empleado, :url => { :action => "create" } do |t| %>
+           <p>
+            <%= t.label :'email' %>
+            <%= t.text_field :email %><br />
+           </p>
+             <p>
+            <%= t.label :'Contraseña' %>
+            <%= t.password_field  :encrypted_password %><br />
+           </p>
+           <p>
+            <%= t.label :'primer_nombre' %>
+            <%= t.text_field :primer_nombre %><br />
+           </p>
+           <p>
+            <%= t.label :'segundo_nombre' %>
+            <%= t.text_field :segundo_nombre %><br />
+           </p>
+           <p>
+            <%= t.label :'primer_apellido' %>
+            <%= t.text_field :primer_apellido %><br />
+           </p>
+             <p>
+            <%= t.label :'segundo_apellido' %>
+            <%= t.text_field :segundo_apellido %><br />
+           </p>
+             <p>
+            <%= t.label :'direccion' %>
+            <%= t.text_area :direccion %><br />
+           </p>
+            <p>
+            <%= t.label :'telefono' %>
+            <%= t.text_field :telefono %><br />
+           </p>
+            <p>
+            <%= t.label :'profesion' %>
+            <%= t.text_field :profesion %><br />
+           </p>
+           <p>
+             <%= t.label :'genero' %>
+             <%= t.select :'sexo', {"Masculino" => 'M', "Femenino" => 'F'}%> 
+             <br /> 
+           </p>
+           <p>
+              <%= t.label :'fecha_de_Nacimiento' %>
+             <%= t.date_select :'fecha_nacimiento', :start_year => 1950 %>        
+           </p>
+           <p>
+             <%= t.label :'fecha_de_Inicio' %>
+             <%= t.date_select :'fecha_inicio', :start_year => 1950 %>           
+           </p>
+           <p>
+             <%= t.label :'nacionalidad' %>
+             <%= t.select :'nacionalidad', options_for_select([ "Afganistán", "Albania", "Alemania",
+               "Andorra", "Angola", "Anguilla" , "Antártida", "Antigua", "Antillas Holandesas", "Arabia Saudí", "Argelia", "Argentina", "Armenia",
+               "Aruba", "Australia", "Austria" , "Azerbaiyán", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bélgica", "Belice" , 
+               "Benin", "Bermudas", "Bielorrusia" , "Birmania", "Bolivia", "Bosnia y Herzegovina", "Botswana", "Brasil", "Brunei", "Bulgaria",
+               "Burkina Faso", "Burundi", "Bután" , "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China",
+               "Chipre", "Colombia", "Comores" , "Congo", "Corea", "Corea del Norte", "Costa de Marfíl", "Costa Rica", "Croacia (Hrvatska)", "Cuba",  
+               "Dinamarca", "Djibouti", "Dominica" , "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eritrea", "Eslovenia", "España",
+               "Estados Unidos", "Estonia", "Etiopía" , "Filipinas", "Finlandia", "Francia", "Gabón", "Gambia", "Georgia", "Ghana",
+               "Gibraltar", "Granada", "Grecia" , "Groenlandia", "Guadalupe", "Guam", "Guatemala", "Guayana", "Guinea", "Haití",
+               "Hungría", "Honduras", "India", "Indonesia" , "Irak", "Irán", "Irlanda", "Isla Bouvet", "Islandia", "Islas Caimán", "Islas Caimán",
+               "Israel", "Italia", "Jamaica" , "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguizistán", "Kiribati", "Kuwait",
+               "Lesotho", "Letonia", "Líbano" , "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Madagascar", "Macedonia",
+               "Malasia", "Malawi", "Maldivas" , "Malí", "Malta", "Marruecos", "Martinica", "Mauricio", "Mauritania", "Mayotte",
+               "México", "Micronesia", "Moldavia" , "Mónaco", "Mongolia", "Montserrat", "Mozambique", "Namibia", "Nauru", "Nepal",
+               "Nicaragua", "Níger", "Nigeria" , "Niue", "Norfolk", "Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán", "Países Bajos",
+               "Panamá", "Papúa Nueva Guinea", "Paquistán" , "Paraguay", "Perú", "Pitcairn", "Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico",
+               "Reino Unido", "República Centroafricana", "República Checa" , "República de Sudáfrica", "República Dominicana", "República Eslovaca", "Reunión", "Ruanda", "Rumania", "Kuwait",
+               "Rusia", "Sahara Occidental", "Saint Kitts y Nevis" , "Samoa", "Samoa Americana", "San Marino", "Senegal", "Seychelles", "Sierra Leona", "Singapur",
+               "Siria", "Somalia", "Suazilandia" , "Sudán", "Suiza", "Surinam", "Tailandia", "Taiwán", "Tanzania", "Tayikistán", 
+               "Trinidad y Tobago", "Túnez", "Turkmenistán" , "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu",
+               "Venezuela", "Vietnam", "Yemen" , "Yugoslavia", "Zambia", "Zimbabue"], "Honduras") %>
+           </p>
+             <p>
+             <%= t.label :'terminal_id' %>   
+               <% @terminals.each do |k| %>
+               <%= t.select :'terminal_id', {k.nombre => k.id} %>
+               <% end %>               
+             <br /> 
+           </p>
+             <p>
+             <%= t.label :'administrador' %>
+              <%= t.select :'administrador', {"Si" => true, "No" => false}%> 
+           </p>
+
+           <p>
+             <%= t.submit "Agregar" %>
+           </p>
+           <% end %>        
           </div>      
       </div>
   </div>

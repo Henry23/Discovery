@@ -23,5 +23,6 @@ class TerminalController < ApplicationController
   def terminal_params
      params.require(:terminal).permit(:nombre, :direccion, :telefono)
  end
-  
 end
+
+
