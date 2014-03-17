@@ -5,9 +5,11 @@ Discovery::Application.routes.draw do
   resources :horarios
   resources :recibo
   resources :addempleados
+  resources :terminal
+  resources :ruta
   
-
-  get 'login/index'
+  get 'ruta/index'
+  get 'terminal/index'
   get 'main/index'
   get 'horarios/index'
   get 'paquete/index'

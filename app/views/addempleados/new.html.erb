@@ -1,8 +1,10 @@
- <div class="navbar-wrapper">
+<body>
+
+    <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
+
         <div class="navbar navbar-inverse">
-          
           <div class="navbar-inner">
             <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -10,8 +12,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          
-            <!-- The drop down menu -->
+                 <!-- The drop down menu -->
             <ul class="nav pull-right">
               <li class="divider-vertical"></li>
               <li class="dropdown">
@@ -19,7 +20,7 @@
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= current_empleado.email %> <strong class="caret"></strong> </a>
                 <ul class="dropdown-menu">              
                   <% if Empleado.find_by_email(current_empleado.email).administrador? %> 
-                    <li> <%= link_to 'Agregar Empleados', new_addempleado_path  %></li>          
+                   <li> <%= link_to 'Agregar Empleados', new_addempleado_path  %></li>          
                     <li> <%= link_to 'Agregar Rutas', new_rutum_path  %></li> 
                     <li> <%= link_to 'Agregar Terminal', new_terminal_path %></li> 
                   <% end %>
@@ -29,7 +30,7 @@
                 <% else %>
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                   <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">               
-                <!-- <%= link_to 'Sign up', new_empleado_registration_path %> --> 
+                <!-- <%= link_to 'Sign up', new_empleado_registration_path %> --> or 
                   <form accept-charset="UTF-8" action="/empleados/sign_in" class="new_empleado" id="new_empleado" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
                     <input name="authenticity_token" type="hidden" value="pLb2Tof7yQ8/ha0TIEmUdB5r2oUuyCwpnu8BwYlgA2Q=" /></div>
                    <input autofocus="autofocus" id="empleado_email" name="empleado[email]" type="email" value="" style="margin-bottom: 15px; color: black;" size="30" placeholder="email del empleado" />        
@@ -48,73 +49,30 @@
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="applicaction" data-toggle="tab">Inicio</a></li>
-                <li><a href="horarios">Horarios</a></li>   
-                <li class="dropdown">                 
-                <li><a href="recibo">E-Ticket!</a></li>
-                 <li><a href="javascript:void(0)" onclick="saludo()">Contacto</a></li>  
+                <li><%= link_to 'Inicio', root_path %></li>
+                <li><%= link_to 'Horarios', horarios_path %></li>   
+                <li><%= link_to 'E-Ticket!', recibo_index_path %></li>   
+                <li><a href="javascript:void(0)" onclick="saludo()">Contacto</a></li>                  
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
-          
         </div><!-- /.navbar -->
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-<br>
-<br>
-<br>
- <div class="container">
-   
-    <div id="myCarousel" class="carousel slide"> 
-      <!-- Carousel items -->  
-      <div class="carousel-inner">
-        <div class="active item"><%= image_tag "sliders1.jpeg"%></div>
-        <div class="item"><%= image_tag "02-6.JPG"%></div>
-        <div class="item"><%= image_tag "02-8.jpeg"%></div>
-        <div class="item"><%= image_tag "02-10.JPG"%></div> 
-        <div class="item"><%= image_tag "sliders3.jpg"%></div>
-         <div class="item"><%= image_tag "03-1.JPG"%></div>
-         <div class="item"><%= image_tag "03-4.JPG"%></div>
-        <div class="item"><%= image_tag "sliders2.jpg"%></div>
-        <div class="item"><%= image_tag "04-2.JPG"%></div>
-        <div class="item"><%= image_tag "04-13.JPG"%></div>
-        <div class="item"><%= image_tag "sliders4.jpg"%></div>
-        <div class="item"><%= image_tag "05-8.jpg"%></div>
-        <div class="item"><%= image_tag "05-14.jpg"%></div>  
-      </div>  
-      <!-- Carousel nav -->  
-      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div> 
- 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-<br>
-<br>
-<br>
+  
     <div class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="span4">
-          <h2>Quienes Somos</h2>
-          <p>Es un agrado para nosotros presentarnos como una empresa dinámica y emprendedora donde la experiencia garantiza la calidad de nuestros servicios teniendo como finalidad coordinar sus actividades turísticas y de negocios.
-          En el país de una manera confiable y eficaz.Transporte Discovery cuenta con un centro de operaciones en la ciudad de Tegucigalpa, Honduras  y alianzas estratégicas con empresas afines en los destinos de nuestro país.</p>         
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <h2>NUESTRA VISION</h2>
-          <p>Posicionarnos como lideres en el rubro turístico de nuestro país y tener la confianza de nuestros clientes al saber que Cuentan con una empresa que les brinda la mejor opción para el desarrollo de sus viajes y servicios.</p>       
-        </div><!-- /.span4 -->
-        <div class="span4">         
-          <h2>NUESTRA  MISION</h2>
-          <p>La satisfacción y seguridad de ser, sus asesores y amigos al saber que orientamos nuestros servicios, estrategias y operaciones en actividades dirigidas a ofrecer experiencias con alto valor agregado.</p>         
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-   </div>
-   
-   <hr class="featurette-divider"  style="color: black" > 
-   
-    <footer>
-        <p> Copyright &copy; Transporte Discovery Todos los derechos reservados. Atención al cliente:  gabriel_23hgap@unite.edu </p>
-    </footer>
-    
+        
+        <div class="span4">           
+          </div>
+        
+         <div class="span4">  
+          <br>
+           <h2>Agregar Empleado</h2>
+          <br>
+        
+          </div>      
+      </div>
+  </div>
+</body>

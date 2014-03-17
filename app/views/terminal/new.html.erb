@@ -1,8 +1,7 @@
-  
+<body>
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
-
         <div class="navbar navbar-inverse">
           <div class="navbar-inner">
             <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
@@ -18,10 +17,10 @@
                 <% if empleado_signed_in? %>              
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= current_empleado.email %> <strong class="caret"></strong> </a>
                 <ul class="dropdown-menu">              
-                  <% if Empleado.find_by_email(current_empleado.email).administrador? %> 
-                   <li> <%= link_to 'Agregar Empleados', new_addempleado_path  %></li>          
+                  <% if Empleado.find_by_email(current_empleado.email).administrador? %>
+                    <li> <%= link_to 'Agregar Empleados', new_addempleado_path  %></li>          
                     <li> <%= link_to 'Agregar Rutas', new_rutum_path  %></li> 
-                    <li> <%= link_to 'Agregar Terminal', new_terminal_path %></li> 
+                    <li> <%= link_to 'Agregar Terminal', new_terminal_path %></li>              
                   <% end %>
                   <li class="divider"></li>
                   <li> <%= link_to 'Sign out', destroy_empleado_session_path, :method => :delete %>   </li>
@@ -40,8 +39,7 @@
                    <input class="btn btn-primary"  style="clear: left; width: 100%; height: 32px; font-size: 13px;"  name="commit" type="submit" value="Sign in"/>
                   </form>  
                        </div>
-                <% end %>  
-                  
+                <% end %>                
               </li>
             </ul>
             <a class="brand" href="#">Transporte Discovery</a>
@@ -57,36 +55,35 @@
           </div><!-- /.navbar-inner -->
         </div><!-- /.navbar -->
       </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
-    
-     <div class="container marketing">
+    </div><!-- /.navbar-wrapper -->  
+    <div class="container marketing">
       <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="span4">            
-          </div><!-- /.span4 --> 
-        
-        <div class="span4">  
+      <div class="row">     
+        <div class="span4">           
+          </div>
+         <div class="span4">  
           <br>
-                <h1>Datos de los Horarios</h1>
+           <h2>Agregar Terminal</h2>
           <br>
-          <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
-            <tr>
-              <th>Origen</th>
-              <th>Destino</th>
-              <th>Horarios</th>
-              <th>Descripcion</th>
-            </tr>          
-            <% @camino.each do |u| %>
-              <tr> 
-                <td><%= Terminal.find_by_id(u.terminal_id_origen).nombre %> </td>
-                <td><%= Terminal.find_by_id(u.terminal_id_destino).nombre %> </td>
-                <td>sale <%= u.hora_salida.strftime("%H:%M") %>
-                lle. <%= u.hora_llegada.strftime("%H:%M") %></td>
-                <td>Bus: duración: <%= u.hora_salida - u.hora_salida %>) </td>
-            </tr>
-            <% end %>                    
-          </table>                  
-       </div><!-- /.span4 --> 
-      </div><!-- /.row -->
-   </div>
-  
+           <%= form_for @terminal, :url => { :action => "create" } do |t| %>
+           <p>
+            <%= t.label :'nombre' %>
+            <%= t.text_field :nombre %><br />
+           </p>
+             <p>
+            <%= t.label :'direccion' %>
+            <%= t.text_area :direccion %><br />
+           </p>
+           
+             <p>
+            <%= t.label :'telefono' %>
+            <%= t.text_field :telefono %><br />
+           </p>
+           <p>
+             <%= t.submit "Agregar" %>
+           </p>
+           <% end %>        
+         </div>
+      </div>
+  </div>
+</body>

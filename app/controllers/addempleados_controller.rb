@@ -1,5 +1,7 @@
 class AddempleadosController < ApplicationController
   def index
-    @terminal = Terminal.all
+    @empleado = Empleado.new
   end
+
+
 end
