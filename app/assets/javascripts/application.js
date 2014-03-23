@@ -37,3 +37,8 @@ $('.carousel').carousel({
   interval: 2000
 })
 
+horarios()
+{
+  alert("Para mayor informacion sobre paquetes y servicios llamanos a nuestra oficinas Tel: +504-2785-18-67 Cel: +504-99-23-18-92/ +504-8737-3880");
+}
+

@@ -1,0 +1,2 @@
+class VerempleadosController < ApplicationController
+end

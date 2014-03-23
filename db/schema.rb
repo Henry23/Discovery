@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313183334) do
+ActiveRecord::Schema.define(version: 20140323173225) do
 
   create_table "buses", force: true do |t|
     t.integer  "empleado_id", null: false
@@ -55,14 +55,6 @@ ActiveRecord::Schema.define(version: 20140313183334) do
   create_table "empleados", force: true do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                     default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.string   "primer_nombre",          limit: 20
     t.string   "segundo_nombre",         limit: 20
     t.string   "primer_apellido",        limit: 20
@@ -76,6 +68,14 @@ ActiveRecord::Schema.define(version: 20140313183334) do
     t.string   "telefono",               limit: 20
     t.string   "nacionalidad",           limit: 30
     t.boolean  "administrador"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                     default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,14 +96,13 @@ ActiveRecord::Schema.define(version: 20140313183334) do
   add_index "paquetes", ["recibo_id"], name: "index_paquetes_on_recibo_id", using: :btree
 
   create_table "recibos", force: true do |t|
-    t.integer  "camino_id",                                          null: false
     t.integer  "empleado_id"
-    t.integer  "cliente_id",                                         null: false
-    t.date     "fecha_de_viaje",                                     null: false
-    t.string   "tipo",           limit: 60,                          null: false
-    t.integer  "asiento",                                            null: false
-    t.decimal  "costo",                     precision: 10, scale: 0, null: false
-    t.decimal  "impuesto",                  precision: 10, scale: 0, null: false
+    t.integer  "cliente_id",                                                       null: false
+    t.integer  "camino_id",                                                        null: false
+    t.date     "fecha_de_viaje",                                                   null: false
+    t.string   "tipo",           limit: 60,                                        null: false
+    t.integer  "asiento",                                                          null: false
+    t.decimal  "costo",                     precision: 10, scale: 0, default: 120, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

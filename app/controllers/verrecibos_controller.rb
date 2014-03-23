@@ -1,0 +1,2 @@
+class VerrecibosController < ApplicationController
+end

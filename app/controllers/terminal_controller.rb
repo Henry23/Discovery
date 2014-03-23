@@ -10,10 +10,8 @@ class TerminalController < ApplicationController
     
   def create
     @terminal =Terminal.create(terminal_params)
-    #@terminal = Terminal.new(params[:terminal])
    if @terminal.save
      redirect_to :controller=>'terminal'
-   else
    end
     
   end

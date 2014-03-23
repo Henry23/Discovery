@@ -4,18 +4,22 @@ class Empleado < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  include ActiveModel::Validations
+   #protect_from_forgery with: :exception
+   #before_filter :configure_permitted_parameters, if: :devise_controller?
+  
   belongs_to :terminal
   has_one :bus
-  has_many :recibo
+  has_many :recibos
   
-  #validates_presenece_of :terminal
-  
-  # Validate is called before save
-   def validate
-     unless Termina.find_by_id(terminal_id)
+  def validate
+     unless Terminal.find_by_id(terminal_id)
        errors.add(:terminal_id, 'does not exist')
      end
    end
- 
+  
+  
+
 end
+
+    
+      

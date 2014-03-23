@@ -1,20 +1,28 @@
 Discovery::Application.routes.draw do
   
   devise_for :empleados
+  #resources :empleados
   resources :paquete
   resources :horarios
   resources :recibo
-  resources :addempleados
   resources :terminal
   resources :ruta
+  resources :cliente
+  resources :verrecibos
+  resources :verempleados
+  resources :verclientes
   
+  get 'verclientes/index'
+  get 'verrecibos/index'
+  get 'verempleados/index'
+  get 'cliente/index'
+  get "nuevo_cliente" => "cliente#new", :as => "nuevo_cliente"
   get 'ruta/index'
   get 'terminal/index'
   get 'main/index'
   get 'horarios/index'
   get 'paquete/index'
   get 'recibo/index'
-  get 'addempleados/index'
   root 'main#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

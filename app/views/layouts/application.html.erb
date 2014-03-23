@@ -7,7 +7,77 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  
+<div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          
+            <!-- The drop down menu -->
+            <ul class="nav pull-right">
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <% if empleado_signed_in? %>              
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= current_empleado.email %> <strong class="caret"></strong> </a>
+                <ul class="dropdown-menu">              
+                  <% if Empleado.find_by_email(current_empleado.email).administrador? %> 
+                    <li> <%= link_to 'Agregar Empleados', new_empleado_registration_path  %></li>          
+                    <li> <%= link_to 'Agregar Rutas', new_rutum_path  %></li> 
+                    <li> <%= link_to 'Agregar Terminal', new_terminal_path %></li> 
+                  <% end %>
+                  <li class="divider"></li>
+                     <li> <%= link_to 'ver Empleados', verempleados_path %></li> 
+                     <li> <%= link_to 'ver Recibos', verrecibos_path %></li>
+                     <li> <%= link_to 'ver Cliente por Id', verclientes_path %></li>
+                     <li class="divider"></li>
+                  <li> <%= link_to 'editar empleado', edit_empleado_registration_path %></li>
+                  <li> <%= link_to 'Sign out', destroy_empleado_session_path, :method => :delete %>   </li>
+                 </ul>                              
+                <% else %>
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                  <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">               
+                <!-- <%= link_to 'Sign up', new_empleado_registration_path %> --> 
+                  <form accept-charset="UTF-8" action="/empleados/sign_in" class="new_empleado" id="new_empleado" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
+                    <input name="authenticity_token" type="hidden" value="pLb2Tof7yQ8/ha0TIEmUdB5r2oUuyCwpnu8BwYlgA2Q=" /></div>
+                   <input autofocus="autofocus" id="empleado_email" name="empleado[email]" type="email" value="" style="margin-bottom: 15px; color: black;" size="30" placeholder="email del empleado" />        
+                   <input id="empleado_password" name="empleado[password]" type="password" style="margin-bottom: 15px; color: black;" size="30"  placeholder="contraseña" />
+                   <input name="empleado[remember_me]" type="hidden" value="0" />
+                    <input id="empleado_remember_me" name="empleado[remember_me]" style="float: left; margin-right: 10px;" type="checkbox" value="1" /> 
+                   <label for="empleado_remember_me" style="color: black" >Recordame</label>
+                   <input class="btn btn-primary"  style="clear: left; width: 100%; height: 32px; font-size: 13px;"  name="commit" type="submit" value="Sign in"/>
+                  </form>  
+                       </div>
+                <% end %>  
+                  
+              </li>
+            </ul>
+            <a class="brand" href="#">Transporte Discovery</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="<%= is_active?(main_index_path) %>" >
+                  <%= link_to 'Inicio', main_index_path %></li>          
+                 <li class="<%= is_active?(horarios_path) %>" >
+                   <%= link_to 'Horarios', horarios_path %></li>   
+                 <li class="<%= is_active?(recibo_index_path) %>" >
+                   <%= link_to 'E-Ticket!', recibo_index_path %></li>   
+                 <li>
+                   <a href="javascript:void(0)" onclick="saludo()">Contacto</a></li>     
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+          
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
   <%= yield %>
 
 </body>

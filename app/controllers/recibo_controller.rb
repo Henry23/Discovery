@@ -1,6 +1,8 @@
 class ReciboController < ApplicationController
   def index
-    @cliente = Cliente.all
-    @terminal = Terminal.all
+    @recibo = Recibo.new
+    @camino = Camino.all 
+  end
+  def create 
   end
 end
