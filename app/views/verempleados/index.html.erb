@@ -1,0 +1,32 @@
+   <div class="container marketing">
+     
+          <br>
+                <h1>Datos de los Empleados</h1>
+          <br>
+          <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
+            <tr>
+              <th>Email</th>
+              <th>Nombre</th>
+              <th>Terminal</th>
+              <th>nacionalidad</th>
+              <th>Profesion</th>
+              <th>administrador</th>
+            </tr>          
+            <% Empleado.all.each do |e| %>
+              <tr> 
+                <td><%= e.email %> </td>
+                <td><%= e.primer_nombre %> <%= e.segundo_nombre %> <%= e.primer_nombre %> <%= e.primer_apellido %> <%= e.segundo_apellido %> </td>
+                <td> <%= Terminal.find(e.terminal_id).nombre %></td>
+                <td> <%= e.nacionalidad %></td>
+                 <td> <%= e.profesion %></td>
+                 <td> <% if e.administrador? %>
+                   <p> Si </p>
+                <% else %>
+                   <p> No </p>
+                <% end %></td>
+            </tr>
+            <% end %>                    
+          </table>                  
+      
+   </div>
+    

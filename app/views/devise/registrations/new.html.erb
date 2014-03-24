@@ -46,10 +46,10 @@
              <%= f.select :'sexo', {"Masculino" => 'M', "Femenino" => 'F'}%>  <br />   </div>
            
            <div><%= f.label :'fecha_de_Nacimiento' %>
-             <%= f.date_select :'fecha_nacimiento', :start_year => 1950 %> <br/>  </div>
+             <%= f.date_field :'fecha_nacimiento', :start_year => 1950 %> <br/>  </div>
           
            <div> <%= f.label :'fecha_de_Inicio' %>
-             <%= f.date_select :'fecha_inicio', :start_year => 1950 %> <br/>  </div>
+             <%= f.date_field :'fecha_inicio', :start_year => 1950 %> <br/>  </div>
            
            <div> <%= f.label :'nacionalidad' %>
              <%= f.select :'nacionalidad', options_for_select([ "Afganistán", "Albania", "Alemania",

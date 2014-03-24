@@ -15,8 +15,12 @@ class Recibo < ActiveRecord::Base
        errors.add(:empleado_id, 'does not exist')
      end
      unless Cliente.find_by_id(cliente_id)
-       errors.add(:empleado_id, 'does not exist')
+       errors.add(:cliente_id, 'does not exist')
      end
+       unless Camino.find_by_id(camino_id)
+       errors.add(:camino_id, 'does not exist')
+     end
+     
    end
  
 end

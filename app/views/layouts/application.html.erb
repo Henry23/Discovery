@@ -29,7 +29,7 @@
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= current_empleado.email %> <strong class="caret"></strong> </a>
                 <ul class="dropdown-menu">              
                   <% if Empleado.find_by_email(current_empleado.email).administrador? %> 
-                    <li> <%= link_to 'Agregar Empleados', new_empleado_registration_path  %></li>          
+                            
                     <li> <%= link_to 'Agregar Rutas', new_rutum_path  %></li> 
                     <li> <%= link_to 'Agregar Terminal', new_terminal_path %></li> 
                   <% end %>
@@ -45,7 +45,9 @@
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                   <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">               
                 <!-- <%= link_to 'Sign up', new_empleado_registration_path %> --> 
+                    
                   <form accept-charset="UTF-8" action="/empleados/sign_in" class="new_empleado" id="new_empleado" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
+                     <li> <%= link_to 'Agregar Empleados', new_empleado_registration_path  %></li> 
                     <input name="authenticity_token" type="hidden" value="pLb2Tof7yQ8/ha0TIEmUdB5r2oUuyCwpnu8BwYlgA2Q=" /></div>
                    <input autofocus="autofocus" id="empleado_email" name="empleado[email]" type="email" value="" style="margin-bottom: 15px; color: black;" size="30" placeholder="email del empleado" />        
                    <input id="empleado_password" name="empleado[password]" type="password" style="margin-bottom: 15px; color: black;" size="30"  placeholder="contraseña" />

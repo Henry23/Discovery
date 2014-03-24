@@ -97,12 +97,12 @@ ActiveRecord::Schema.define(version: 20140323173225) do
 
   create_table "recibos", force: true do |t|
     t.integer  "empleado_id"
-    t.integer  "cliente_id",                                                       null: false
-    t.integer  "camino_id",                                                        null: false
-    t.date     "fecha_de_viaje",                                                   null: false
-    t.string   "tipo",           limit: 60,                                        null: false
-    t.integer  "asiento",                                                          null: false
-    t.decimal  "costo",                     precision: 10, scale: 0, default: 120, null: false
+    t.string   "cliente_id",     limit: 15,                                             null: false
+    t.integer  "camino_id",                                                             null: false
+    t.date     "fecha_de_viaje",                                                        null: false
+    t.string   "tipo",           limit: 60,                          default: "Normal", null: false
+    t.integer  "asiento",                                                               null: false
+    t.decimal  "costo",                     precision: 10, scale: 0, default: 120,      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

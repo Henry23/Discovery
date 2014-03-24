@@ -1,0 +1,29 @@
+   <div class="container marketing">
+     
+          <br>
+                <h1>Datos de los Empleados</h1>
+          <br>
+          <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
+            <tr>
+              <th>Emplado</th>
+              <th>Cliente</th>
+              <th>Ruta</th>
+              <th>Fecha de Viaje</th>
+              <th>tipo</th>
+              <th>asiento</th>
+              <th>costo</th>
+            </tr>          
+            <% Recibo.all.each do |e| %>
+              <tr>
+                <td></td>
+                <td><%= Cliente.find(e.cliente_id).primer_nombre %> <%= Cliente.find(e.cliente_id).segundo_nombre %> <%= Cliente.find(e.cliente_id).primer_apellido %> </td>
+                <td></td>
+                <td> <%= e.fecha_de_viaje %></td>
+                 <td> <%= e.tipo %></td>
+                 <td><%= e.asiento %></td>
+                  <td><%= e.costo %></td>
+            </tr>
+            <% end %>                    
+          </table>                  
+      
+   </div>
