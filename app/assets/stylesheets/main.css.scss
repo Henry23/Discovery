@@ -1,23 +1,134 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+ text-align: center;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size:30px;}
+h2{
+text-align: center;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size:30px;
+}
+
 body {
   padding-bottom: 40px;
   color: black;
   background-color:#eeeceb;
-  #background-image: image-url("meta.jpg");
-}
-h2{
-  color: black;
-}
-p{
-  color:black;
-}
-.carousel-inner>.item>img {
-margin: 0 auto;
-height: 320px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size:40px;
 }
 
-navbar-wrapper{
-color:#fff;
+.InnerGrid
+{
+   left: 45px;
+    top: 88px;
+
+   height: 290px;
+    width: 150px;
+}
+
+.Pasillo
+{
+    background-color: Gray;
+}
+
+.holder
+{
+    height: 458px;
+    width: 245px;
+    margin-bottom: 0px;
+    background-image: image-url("bus_top_view.png");
+}
+  
+
+.Available {
+   background-image: image-url("available_seat_img.png");
+     background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    color: Black;
+    font-size: 10px;
+  
+ }
+
+.NotAvailable
+{
+    background-image: image-url("booked_seat_img.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    color: Black;
+    font-size: 10px;
+  font-weight:bold;
+}
+.Selected
+{
+   background-image: image-url("selected_seat_img.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    color: Black;
+    font-size: 10px;
+  font-weight:bold;
+}
+
+/*-------------GRIDVIEW----------*/
+.mGrid
+{
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}
+.mGrid td
+{
+    padding: 2px;
+    border: solid 1px #c1c1c1;
+    color: #717171;
+}
+.mGrid th
+{
+    padding: 4px 2px;
+    color: #fff;
+    border-left: solid 1px #525252;
+    font-size: 0.9em;
+}
+.mGrid .selected-row
+{
+    background: #A9DFD6;
+}
+.mGrid .pgr table
+{
+    margin: 5px 0;
+}
+.mGrid .pgr td
+{
+    border-width: 0;
+    padding: 0 6px;
+    border-left: solid 1px #666;
+    font-weight: bold;
+    color: #fff;
+    line-height: 12px;
+}
+.mGrid .pgr a
+{
+    color: #666;
+    text-decoration: none;
+}
+.mGrid .pgr a:hover
+{
+    color: #000;
+    text-decoration: none;
+  
 }

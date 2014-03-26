@@ -1,7 +1,6 @@
 Discovery::Application.routes.draw do
   
   devise_for :empleados
-  #resources :empleados
   resources :paquete
   resources :horarios
   resources :recibo
@@ -16,7 +15,6 @@ Discovery::Application.routes.draw do
   get 'verrecibos/index'
   get 'verempleados/index'
   get 'cliente/index'
-  get "nuevo_cliente" => "cliente#new", :as => "nuevo_cliente"
   get 'ruta/index'
   get 'terminal/index'
   get 'main/index'

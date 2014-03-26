@@ -1,23 +1,33 @@
    <div class="container marketing">
      
           <br>
-                <h1>Datos de los Empleados</h1>
+                <h1>Recibos</h1>
           <br>
           <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
             <tr>
-              <th>Emplado</th>
+              <% Recibo.all.each do |e| %>
+              <% if e.empleado_id != nil %>
+                  <th>Emplado</th>
+              <% end %>
+     <% end %>
               <th>Cliente</th>
               <th>Ruta</th>
+              <th>Hora de Salida</th>
+              <th>Hora de Llegada</th>
               <th>Fecha de Viaje</th>
               <th>tipo</th>
               <th>asiento</th>
               <th>costo</th>
             </tr>          
-            <% Recibo.all.each do |e| %>
+            <% Recibo.all.each do |e| %>  
               <tr>
-                <td></td>
+              <% if e.empleado_id != nil %>
+                <td><%= Empleado.find(e.empleado_id).primer_nombre %>  <%= Empleado.find(e.empleado_id).segundo_nombre %> <%= Empleado.find(e.empleado_id).primer_apellido %> </td>
+                <% end %>
                 <td><%= Cliente.find(e.cliente_id).primer_nombre %> <%= Cliente.find(e.cliente_id).segundo_nombre %> <%= Cliente.find(e.cliente_id).primer_apellido %> </td>
-                <td></td>
+                <td><%= Camino.find(e.camino_id).terminal_id_origen %> ~ <%= Camino.find(e.camino_id).terminal_id_destino %></td>
+                <td> <%=  Camino.find(e.camino_id).hora_salida.strftime("%H:%M") %> </td>
+                <td>  <%=  Camino.find(e.camino_id).hora_llegada.strftime("%H:%M") %></td>
                 <td> <%= e.fecha_de_viaje %></td>
                  <td> <%= e.tipo %></td>
                  <td><%= e.asiento %></td>

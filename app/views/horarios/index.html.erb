@@ -8,23 +8,26 @@
           <br>
                 <h1>Datos de los Horarios</h1>
           <br>
-          <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
+            <table  border="1" cellpadding="1" cellspacing="1" class="table table-condensed">
             <tr>
+              <th>id</th>
               <th>Origen</th>
               <th>Destino</th>
-              <th>Horarios</th>
+              <th>Horario sale</th>
+              <th>Horario LLe.</th>
               <th>Descripcion</th>
             </tr>          
             <% @camino.each do |u| %>
               <tr> 
+                <td><%= u.id %> </td>
                 <td><%= Terminal.find_by_id(u.terminal_id_origen).nombre %> </td>
                 <td><%= Terminal.find_by_id(u.terminal_id_destino).nombre %> </td>
-                <td>sale <%= u.hora_salida.strftime("%H:%M") %>
-                lle. <%= u.hora_llegada.strftime("%H:%M") %></td>
-                <td>Bus: duración: <%= u.hora_salida - u.hora_salida %>) </td>
-            </tr>
+                <td>sale <%= u.hora_salida.strftime("%H:%M") %></td>
+                <td>lle. <%= u.hora_llegada.strftime("%H:%M") %></td>
+                <td></td>
+               </tr>
             <% end %>                    
-          </table>                  
+          </table>                
        </div><!-- /.span4 --> 
       </div><!-- /.row -->
    </div>

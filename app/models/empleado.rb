@@ -3,9 +3,7 @@ class Empleado < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
-   #protect_from_forgery with: :exception
-   #before_filter :configure_permitted_parameters, if: :devise_controller?
+
   
   belongs_to :terminal
   has_one :bus
@@ -18,7 +16,6 @@ class Empleado < ActiveRecord::Base
    end
   
   
-
 end
 
     

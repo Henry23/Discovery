@@ -5,9 +5,15 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
+  <% if alert %>
+   <p class="alert"><%= alert %></p>
+<% end %>
 <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
@@ -68,7 +74,7 @@
                 <li class="<%= is_active?(main_index_path) %>" >
                   <%= link_to 'Inicio', main_index_path %></li>          
                  <li class="<%= is_active?(horarios_path) %>" >
-                   <%= link_to 'Horarios', horarios_path %></li>   
+                   <%= link_to 'Rutas y Horarios', horarios_path %></li>   
                  <li class="<%= is_active?(recibo_index_path) %>" >
                    <%= link_to 'E-Ticket!', recibo_index_path %></li>   
                  <li>
@@ -80,6 +86,7 @@
         </div><!-- /.navbar -->
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
+      
   <%= yield %>
 
 </body>
